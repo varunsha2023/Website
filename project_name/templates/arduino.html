@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Tutorial Website - Arduino
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="css/style.css">
+    <div class="container">
+        <h1 class="heading">Arduino Tutorials</h1>
+        <p class="intro">Welcome to our Arduino tutorials page!</p>
+        
+        <div class="experiments">
+            <h2 class="section-title">Experiments:</h2>
+            <p class="section-description">Here are some Arduino experiments you can try:</p>
+            <ul class="experiment-list">
+                <li class="experiment">
+                    <h3 class="experiment-title">Blinking LED</h3>
+                    
+                    <p class="experiment-description">Learn how to make an LED blink using Arduino.</p>
+                    <a href="blinkled.html"><img id="img1" src="{% static 'img/demo.jpg' %}" alt="Blinking LED" class="experiment-image"></a>
+                </li>                                           
+                <li class="experiment">
+                    <h3 class="experiment-title">Temperature Sensor</h3>
+                    <p class="experiment-description">Measure temperature with Arduino using a temperature sensor.</p>
+                    <a href="temperature.html"><img src="temperature_sensor_image.jpg" alt="Temperature Sensor" class="experiment-image"></a>
+                </li>
+                <li class="experiment">
+                    <h3 class="experiment-title">Pushbutton</h3>
+                    <p class="experiment-description">Interface Pushbutton with Led Using Arduino.</p>
+                    <a href="pushbutton.html"><img src="pushbutton_image.jpg" alt="Pushbutton" class="experiment-image"></a>
+                </li>
+                <li class="experiment">
+                    <h3 class="experiment-title">Buzzer</h3>
+                    <p class="experiment-description">Interface Buzzer With Arduino.</p>
+                    <a href="buzzer.html"><img src="motion_detector_image.jpg" alt="Buzzer" class="experiment-image"></a>
+                </li>
+                <li class="experiment">
+                    <h3 class="experiment-title">Ultrasonic</h3>
+                    <p class="experiment-description">Interface Arduino With Ultrasonic Sensor.</p>
+                    <a href="ultrasonic.html"><img src="motion_detector_image.jpg" alt="Measure Distance" class="experiment-image"></a>
+                </li>
+                <li class="experiment">
+                    <h3 class="experiment-title">Dht11</h3>
+                    <p class="experiment-description">Measure a Temperature and Humidity using Arduino with Dht11.</p>
+                    <a href="dht.html"><img src="motion_detector_image.jpg" alt="Tem-Humidity Sensor" class="experiment-image"></a>
+                </li>
+                <li class="experiment">
+                    <h3 class="experiment-title">PIR</h3>
+                    <p class="experiment-description">Measure a Poistion of the Object using Arduino.</p>
+                    <a href="pir.html"><img src="motion_detector_image.jpg" alt="Poistion Sensor" class="experiment-image"></a>
+                </li>
+                <li class="experiment">
+                    <h3 class="experiment-title">LCD</h3>
+                    <p class="experiment-description">Interface LCD with Arduino .</p>
+                    <a href="lcd.html"><img src="motion_detector_image.jpg" alt="LCD Display" class="experiment-image"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Blinking LED Tutorial with Push Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #007bff;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arduino Blinking LED Tutorial with Push Button</h1>
+    </header>
+
+    <div class="container">
+        <h2>Aim of the Experiment:</h2>
+        <p>The aim of this experiment is to learn how to make an LED blink using Arduino controlled by a push button.</p>
+
+        <h2>Introduction:</h2>
+        <p>In this experiment, we will use an Arduino microcontroller to control the blinking of an LED based on the state of a push button. Pressing the button will toggle the LED on and off.</p>
+
+        <h2>Components Required:</h2>
+        <ul>
+            <li>Arduino board (e.g., Arduino Uno)</li>
+            <li>LED</li>
+            <li>Resistor (220 ohms)</li>
+            <li>Push button</li>
+            <li>Jumper wires</li>
+            <li>Breadboard</li>
+        </ul>
+
+        <h2>Code:</h2>
+        <p>Below is the Arduino code to blink an LED with a push button:</p>
+        <pre>
+            <code>
+                // Define the pin connected to the LED
+                int ledPin = 13;
+                // Define the pin connected to the push button
+                int buttonPin = 2;
+                // Variable to store the current state of the button
+                int buttonState = 0;
+
+                // Setup function runs once when the sketch starts
+                void setup() {
+                    // Initialize the digital pin as an output for the LED
+                    pinMode(ledPin, OUTPUT);
+                    // Initialize the digital pin as an input for the push button
+                    pinMode(buttonPin, INPUT);
+                }
+
+                // Loop function runs repeatedly as long as the Arduino is powered on
+                void loop() {
+                    // Read the state of the push button
+                    buttonState = digitalRead(buttonPin);
+
+                    // If the button is pressed, toggle the LED
+                    if (buttonState == HIGH) {
+                        // Toggle the LED state
+                        digitalWrite(ledPin, !digitalRead(ledPin));
+                        // Wait a short delay to debounce the button
+                        delay(100);
+                    }
+                }
+            </code>
+        </pre>
+
+        <h2>Circuit Diagram:</h2>
+        <p>Below is the circuit diagram for connecting the LED and push button to Arduino:</p>
+        <img src="Arduino_with_push_button.png" alt="Circuit Diagram">
+
+        <h2>Conclusion:</h2>
+        <p>In this experiment, we successfully learned how to make an LED blink using Arduino controlled by a push button. This example demonstrates the use of digital input and output and how to respond to external events with Arduino.</p>
+    </div>
+
+   
+</body>
+</html>

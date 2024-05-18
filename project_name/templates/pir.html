@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino PIR Sensor Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+            color: #007bff;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arduino PIR Sensor Tutorial</h1>
+    </header>
+
+    <div class="container">
+        <h2>Aim of the Experiment:</h2>
+        <p>The aim of this experiment is to learn how to use a PIR (Passive Infrared) motion sensor with Arduino.</p>
+
+        <h2>Introduction:</h2>
+        <p>In this experiment, we will use a PIR motion sensor to detect motion in its field of view. PIR sensors are commonly used to detect motion by measuring changes in infrared radiation levels.</p>
+
+        <h2>Components Required:</h2>
+        <ul>
+            <li>Arduino board (e.g., Arduino Uno)</li>
+            <li>PIR motion sensor</li>
+            <li>Jumper wires</li>
+        </ul>
+
+        <h2>Code:</h2>
+        <p>Below is the Arduino code to detect motion using a PIR sensor:</p>
+        <pre>
+            <code>
+                // Define the pin connected to the PIR sensor
+                int pirPin = 2; // You can change this pin according to your setup
+
+                // Setup function runs once when the sketch starts
+                void setup() {
+                    // Initialize the serial communication
+                    Serial.begin(9600);
+
+                    // Initialize the PIR pin as an input
+                    pinMode(pirPin, INPUT);
+                }
+
+                // Loop function runs repeatedly as long as the Arduino is powered on
+                void loop() {
+                    // Read the state of the PIR sensor
+                    int motionDetected = digitalRead(pirPin);
+
+                    // Print the state to the Serial Monitor
+                    if (motionDetected == HIGH) {
+                        Serial.println("Motion detected!");
+                    } else {
+                        Serial.println("No motion detected.");
+                    }
+
+                    // Delay before next reading
+                    delay(1000);
+                }
+            </code>
+        </pre>
+
+        <h2>Circuit Diagram:</h2>
+        <p>Below is the circuit diagram for connecting the PIR sensor to Arduino:</p>
+        <img src="PIR_Arduino.png" alt="Circuit Diagram">
+
+        <h2>Conclusion:</h2>
+        <p>In this experiment, we successfully learned how to use a PIR motion sensor with Arduino. This sensor can be used in various applications such as security systems, automatic lighting, and more.</p>
+    </div>
+</body>
+</html>

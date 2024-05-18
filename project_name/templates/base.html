@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tutorial Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/arduino/">Arduino</a>
+        <a href="/esp32/">ESP32</a>
+        <a href="/esp8266/">ESP8266</a>
+        <a href="/raspberry_pi/">Raspberry Pi</a>
+        <a href="/drone/">Drone</a>
+        <a href="/lorawan/">LoRaWAN</a>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
